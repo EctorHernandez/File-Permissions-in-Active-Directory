@@ -20,22 +20,29 @@ This lab focuses on file permissions and shares in the context of an Active Dire
 
 <p>
 First we will need to log into the domain controller (DC) virtual machine (VM) as an admin. Open folders and navigate to the "c:\ drive", in here we will create the folders we will be using.<br />
-I'll make four separate folders to demonstrate the different ways we can set file permissions.
+I'll create four separate folders to demonstrate the different ways we can set file permissions. the file created will be:
 </p>
-<p>
-<img src="https://i.imgur.com/bUjobDC.png" height="80%" width="80%" alt="Permissions Steps"/>
-<img src="https://i.imgur.com/lz1DMos.png" height="80%" width="80%" alt="Permissions Steps"/>
-</p>
-<p>
-In order to set permissions to folders and files, we need to create the folders to share. While logged in to the domain controller VM as an admin, create the folders. I have created 4 appropriately named folders to set permissions to on the C:\ drive. To share a folder and assign permissions, open the folder's Properties and click on Share under the Sharing tab. You can specify people on the network to share with and assign appropriate permissions. I set the following permissions for the folders (the accounting folder will be changed later):
 
-Domain Users can Read the read-access folder and they have Read/Write permissions on the write-access folder.
-Domain Admins have Read/Write access to the no-access folder.
+- Security file
+- Security logs
+- Account Records
+- Research Notes
+<p>
+<img src="https://i.imgur.com/RSYNhgY.png" height="80%" width="80%" alt="Permissions Steps"/>
+</p>
+<p>
+  To share a folder and assign permissions, open the folder's Properties and click on Share under the Sharing tab. Here you can choose what users or groups in the network can access the folders and files. You can see that I shared the "security file" folder with the Security Team, users in this group now have read/write access.
+</p>
+<p>
+<img src="https://i.imgur.com/jqEgECn.png" height="80%" width="80%" alt="Permissions Steps"/>
+</p>
+<p>
+Since the the "security file" folder was only shared with member from the Security team only they can access the folder. Below we see what happens when someone outside the assigned team trys to access a folder without the right permissions.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/kWrpLFE.png" height="80%" width="80%" alt="Permissions Steps"/>
+<img src="https://i.imgur.com/TfapsXr.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
 On the client VM, navigate to the shared folders through the following path in File Explorer: \\dc-1. Notice how some folders cannot allow you to add files, but only view them. One does not allow access at all. This is because as a Domain User, permissions for the folder are tied to the respective Security Group and the folder's own set permissions for users within that Security Group.
