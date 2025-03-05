@@ -45,7 +45,7 @@ Since the the "security file" folder was only shared with member from the Securi
 <img src="https://i.imgur.com/TfapsXr.png" height="80%" width="80%" alt="Permissions Steps"/>
 </p>
 <p>
-On the client VM, navigate to the shared folders through the following path in File Explorer: \\dc-1. Notice how some folders cannot allow you to add files, but only view them. One does not allow access at all. This is because as a Domain User, permissions for the folder are tied to the respective Security Group and the folder's own set permissions for users within that Security Group.
+On the client VM, navigate to the shared folders through the following path in File Explorer: "\\dc-1". Notice how some folders cannot allow you to add files, but only view them. One does not allow access at all. This is because as a Domain User, permissions for the folder are tied to the respective Security Group and the folder's own set permissions for users within that Security Group.
 </p>
 <br />
 
